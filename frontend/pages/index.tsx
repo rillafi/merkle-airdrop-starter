@@ -21,7 +21,7 @@ export default function Home() {
       <div className={styles.home}>
         {/* Project logo */}
         <div>
-          <Image src="/logo.png" alt="Logo" width={250} height={250} priority />
+          <Image src="/rillaFiAvatar.svg" alt="Logo" width={250} height={250} priority />
         </div>
 
         {/* Project introduction article, if it exists */}
