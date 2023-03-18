@@ -1,5 +1,4 @@
 import Link from "next/link"; // Dynamic routing
-import Image from "next/image"; // Images
 import { eth } from "state/eth"; // Global state
 import { useState } from "react"; // State management
 import styles from "styles/components/Header.module.scss"; // Component styles
@@ -15,22 +14,22 @@ const actionMenuLinks: {
 }[] = [
   {
     name: "About",
-    icon: "/icons/info.svg",
+    icon: "https://airdrop.rillafi.com/icons/info.svg",
     url: process.env.NEXT_PUBLIC_ARTICLE,
   },
   {
     name: "Discord",
-    icon: "/icons/discord.svg",
+    icon: "https://airdrop.rillafi.com/icons/discord.svg",
     url: process.env.NEXT_PUBLIC_DISCORD,
   },
   {
     name: "Twitter",
-    icon: "/icons/twitter.svg",
+    icon: "https://airdrop.rillafi.com/icons/twitter.svg",
     url: process.env.NEXT_PUBLIC_TWITTER,
   },
   {
     name: "GitHub",
-    icon: "/icons/github.svg",
+    icon: "https://airdrop.rillafi.com/icons/github.svg",
     url: process.env.NEXT_PUBLIC_GITHUB,
   },
 ];
@@ -85,7 +84,7 @@ export default function Header() {
               // Render action link containing name and image
               <a href={url} target="_blank" rel="noopener noreferrer" key={i}>
                 <span>{name}</span>
-                <Image src={icon} width={16} height={16} alt={`${name} icon`} />
+                <img src={icon} width={16} height={16} alt={`${name} icon`} />
               </a>
             ) : null;
           })}

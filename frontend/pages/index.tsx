@@ -1,4 +1,3 @@
-import Image from "next/image"; // Images
 import { eth } from "state/eth"; // State container
 import Layout from "components/Layout"; // Layout wrapper
 import { useRouter } from "next/router"; // Routing
@@ -32,7 +31,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             Introducing {tokenName}{" "}
-            <Image src="/icons/arrow.svg" alt="Arrow" height={12} width={12} />
+            <img src="https://airdrop.rillafi.com/icons/arrow.svg" alt="Arrow" height={12} width={12} />
           </a>
         ) : null}
 

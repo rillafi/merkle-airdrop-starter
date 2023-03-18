@@ -1,4 +1,3 @@
-import Image from "next/image"; // Images
 import styles from "styles/components/Footer.module.scss"; // Component styles
 
 /**
@@ -7,11 +6,11 @@ import styles from "styles/components/Footer.module.scss"; // Component styles
  */
 const footerLinks: { icon: string; url: string | undefined }[] = [
   // Discord
-  { icon: "/icons/discord.svg", url: process.env.NEXT_PUBLIC_DISCORD },
+  { icon: "https://airdrop.rillafi.com/icons/discord.svg", url: process.env.NEXT_PUBLIC_DISCORD },
   // Twitter
-  { icon: "/icons/twitter.svg", url: process.env.NEXT_PUBLIC_TWITTER },
+  { icon: "https://airdrop.rillafi.com/icons/twitter.svg", url: process.env.NEXT_PUBLIC_TWITTER },
   // Github
-  { icon: "/icons/github.svg", url: process.env.NEXT_PUBLIC_GITHUB },
+  { icon: "https://airdrop.rillafi.com/icons/github.svg", url: process.env.NEXT_PUBLIC_GITHUB },
 ];
 
 export default function Footer() {
@@ -22,7 +21,7 @@ export default function Footer() {
         return url ? (
           // Render link with icon image
           <a href={url} target="_blank" rel="noopener noreferrer" key={i}>
-            <Image src={icon} alt="Social link" width={30} height={30} />
+            <img src={icon} alt="Social link" width={30} height={30} />
           </a>
         ) : null;
       })}
