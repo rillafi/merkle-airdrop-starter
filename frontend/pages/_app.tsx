@@ -8,9 +8,9 @@ export default function MerkleAirdropStarter({
   Component,
   pageProps,
 }: AppProps) {
-    if (Date.now() / 1000 < 1678896000) {
-        return <Error statusCode={404} />
-    }
+    // if (Date.now() / 1000 < 1678896000) {
+    //     return <Error statusCode={404} />
+    // }
 
   return (
     // Wrap application in global state provider

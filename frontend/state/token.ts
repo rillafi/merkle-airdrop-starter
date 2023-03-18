@@ -28,7 +28,7 @@ const merkleTree = new MerkleTree(
   Object.entries(config.airdrop).map(([address, tokens]) =>
     generateLeaf(
       ethers.utils.getAddress(address),
-      ethers.utils.parseUnits(tokens.toString(), config.decimals).toString()
+      ethers.utils.parseUnits(tokens, config.decimals).toString()
     )
   ),
   // Hashing function
@@ -48,7 +48,7 @@ function useToken() {
 
   // Local state
   const [dataLoading, setDataLoading] = useState<boolean>(true); // Data retrieval status
-  const [numTokens, setNumTokens] = useState<number>(0); // Number of claimable tokens
+  const [numTokens, setNumTokens] = useState<string>("0"); // Number of claimable tokens
   const [alreadyClaimed, setAlreadyClaimed] = useState<boolean>(false); // Claim status
 
   /**
@@ -56,6 +56,7 @@ function useToken() {
    * @returns {ethers.Contract} signer-initialized contract
    */
   const getContract = (): ethers.Contract => {
+      console.log(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
     return new ethers.Contract(
       // Contract address
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ?? "",
@@ -75,7 +76,7 @@ function useToken() {
    * @param {string} address to check
    * @returns {number} of tokens claimable
    */
-  const getAirdropAmount = (address: string): number => {
+  const getAirdropAmount = (address: string): string => {
     // If address is in airdrop. convert address to correct checksum
     address = ethers.utils.getAddress(address)
     
@@ -85,7 +86,7 @@ function useToken() {
     }
 
     // Else, return 0 tokens
-    return 0;
+    return "0";
   };
 
   /**
@@ -144,7 +145,7 @@ function useToken() {
       setNumTokens(tokens);
 
       // Collect claimed status for address, if part of airdrop (tokens > 0)
-      if (tokens > 0) {
+      if (tokens != "0") {
         const claimed = await getClaimedStatus(address);
         setAlreadyClaimed(claimed);
       }

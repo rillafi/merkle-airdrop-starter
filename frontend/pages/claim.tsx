@@ -16,7 +16,7 @@ export default function Claim() {
     claimAirdrop,
   }: {
     dataLoading: boolean;
-    numTokens: number;
+    numTokens: string;
     alreadyClaimed: boolean;
     claimAirdrop: Function;
   } = token.useContainer();
@@ -48,7 +48,7 @@ export default function Claim() {
             <h1>Loading airdrop details...</h1>
             <p>Please hold while we collect details about your address.</p>
           </div>
-        ) : numTokens == 0 ? (
+        ) : numTokens === "0" ? (
           // Not part of airdrop
           <div className={styles.card}>
             <h1>You do not qualify.</h1>

@@ -142,7 +142,7 @@ list[2].interacted.length
     // addresses = addresses.filter((_, i) => (BigNumber.from(res[i]?.hex).gt(0)))
     addresses = uniq(addresses)
     addresses = addresses.filter((addr) => (veAddresses.includes(addr)));
-    const totalPot = ethers.utils.parseEther('1000000');
+    const totalPot = ethers.utils.parseEther('200000');
     const amount = totalPot.div(addresses.length);
     const config = JSON.parse(fs.readFileSync('./config.json').toString())
     config.airdrop = {};
