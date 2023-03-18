@@ -52,7 +52,7 @@ export default function Header() {
       <div className={styles.header__logo}>
         <Link href="/">
           <a>
-            <Image src="https://airdrop.rillafi.com/rillaFiAvatar.svg" alt="Logo" width={58} height={58} priority />
+            <img src="https://airdrop.rillafi.com/rillaFiAvatar.svg" alt="Logo" width={58} height={58} />
           </a>
         </Link>
       </div>

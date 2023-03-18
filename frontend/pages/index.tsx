@@ -21,7 +21,7 @@ export default function Home() {
       <div className={styles.home}>
         {/* Project logo */}
         <div>
-          <Image src="https://airdrop.rillafi.com/rillaFiAvatar.svg" alt="Logo" width={250} height={250} priority />
+          <img src="https://airdrop.rillafi.com/rillaFiAvatar.svg" alt="Logo" width={250} height={250} />
         </div>
 
         {/* Project introduction article, if it exists */}
